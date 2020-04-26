@@ -4,6 +4,7 @@ import ApolloClient from 'apollo-boost'
 import { ApolloProvider } from 'react-apollo'
 import { App } from './App'
 import Context from './Context'
+import { MyThemeProvider } from './ThemeContext'
 
 const client = new ApolloClient({
   uri: 'https://petgram-server-edgarlr.edgarlr.now.sh/graphql',
@@ -20,7 +21,7 @@ const client = new ApolloClient({
     const { networkError } = error
     if (networkError && networkError.result.code === 'invalid_token') {
       window.sessionStorage.removeItem('token')
-      window.location.href = '/user'
+      window.location.href = '/signup'
     }
   }
 })
@@ -28,7 +29,9 @@ const client = new ApolloClient({
 ReactDom.render(
   <Context.Provider value={{ isAuth: false }} >
     <ApolloProvider client={client} >
-      <App />
+      <MyThemeProvider>
+        <App />
+      </MyThemeProvider>
     </ApolloProvider>
   </Context.Provider>,
   document.querySelector('#app'))

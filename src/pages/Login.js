@@ -1,38 +1,40 @@
 import React, { Fragment, useContext } from 'react'
 import { UserForm } from '../Components/UserForm'
 import { Context } from '../Context'
-import { RegisterMutation } from '../Containers/RegisterMutation'
+import { LoginMutation } from '../Containers/LoginMutation'
 import { LoginLink } from '../Components/LoginLink'
 
-export const NotRegisteredUser = () => {
+export const Login = () => {
   const { activateAuth } = useContext(Context)
   return (
     <Fragment>
-      <RegisterMutation>
-        {(register, { data, loading, error }) => {
+      <LoginMutation>
+        {(login, { data, loading, error }) => {
           const onSubmit = ({ email, password }) => {
             const input = { email, password }
             const variables = { input }
-            register({ variables }).then(({ data }) => {
-              const { signup } = data
-              activateAuth(signup)
+            login({ variables }).then(({ data }) => {
+              const { login } = data
+              activateAuth(login)
             })
           }
           const errorMsg =
-            error && 'El usuario ya existe o hay algun problema.'
+            error && 'La contraseña no es correcta o el usuario no existe'
           return (
             <Fragment>
               <UserForm
                 disabled={loading}
                 error={errorMsg}
-                title='Registrarse'
+                title='Iniciar Sesión'
                 onSubmit={onSubmit}
               />
-              <LoginLink text='Ya' pathTo='login'>Inicia Sesión</LoginLink>
+              <LoginLink text='No' pathTo='signup'>
+                Regístrate
+              </LoginLink>
             </Fragment>
           )
         }}
-      </RegisterMutation>
+      </LoginMutation>
     </Fragment>
   )
 }

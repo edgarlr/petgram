@@ -1,9 +1,12 @@
 import { createGlobalStyle } from 'styled-components'
+import { backgroundColor, ShadowColor } from './Theme'
 
 export const GlobalStyle = createGlobalStyle`
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+  
   html {
     box-sizing: border-box;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Poppins', sans-serif;
   }
         
   *, *::before, *::after {
@@ -11,7 +14,7 @@ export const GlobalStyle = createGlobalStyle`
   }
         
   ul, li, h1, h2, h3, p, button {
-    margin: 0;
+    margin: 0
   }
 
   ul {
@@ -26,7 +29,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background: #fefefe;
+    background: ${backgroundColor};
     height: 100vh;
     margin: 0 auto;
     max-width: 500px;
@@ -35,7 +38,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   #app {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 0 10px ${ShadowColor};
     overflow-x: hidden;
     min-height: 100vh;
     padding-bottom: 10px;

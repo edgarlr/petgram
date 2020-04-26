@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react'
 import { Helmet } from 'react-helmet'
-import { Div, Title, Subtitle } from './styles'
+import { Div, Title } from './styles'
+import { Header } from '../Header'
 
 export const Layout = ({ children, title, subtitle }) => {
   return (
@@ -10,8 +11,7 @@ export const Layout = ({ children, title, subtitle }) => {
         {subtitle && <meta name='description' content={subtitle} />}
       </Helmet>
       <Div>
-        {title && <Title>{title}</Title>}
-        {subtitle && <Subtitle>{subtitle}</Subtitle>}
+        {title && <Header><Title>{title}</Title></Header>}
         {children}
       </Div>
     </Fragment>

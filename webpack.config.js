@@ -68,5 +68,11 @@ module.exports = {
         }
       ]
     })
-  ]
+  ],
+  devServer: {
+    hot: true,
+    open: true,
+    host: '0.0.0.0',
+    port: 8080 // Si deseas cambiar el puerto que tambien viene por default 8080
+  }
 }

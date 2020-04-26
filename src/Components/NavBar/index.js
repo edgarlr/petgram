@@ -2,18 +2,18 @@ import React from 'react'
 import { Nav, Link } from './styles'
 import { MdHome, MdFavoriteBorder, MdPersonOutline } from 'react-icons/md'
 
-const SIZE = '32px'
+const SIZE = '24px'
 
 export const NavBar = () => {
   return (
     <Nav>
-      <Link to='/'>
+      <Link name='Inicio' to='/'>
         <MdHome size={SIZE} />
       </Link>
-      <Link to='/favs'>
+      <Link name='Favoritos' to='/favs'>
         <MdFavoriteBorder size={SIZE} />
       </Link>
-      <Link to='/user'>
+      <Link name='Perfil' to='/user'>
         <MdPersonOutline size={SIZE} />
       </Link>
     </Nav>

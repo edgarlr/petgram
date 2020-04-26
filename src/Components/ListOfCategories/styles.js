@@ -1,26 +1,34 @@
 import styled, { css } from 'styled-components'
-import {fadeIn} from '../../styles/animation'
 
 export const List = styled.ul`
   display: flex;
   overflow: scroll;
   width: 100%;
-  padding: 10px 0;
-  ${props => props.fixed && css`
-    ${fadeIn({time:'1s'})}
-    background: #fff;
-    box-shadow: 0 0 20px rgba(0,0,0,0.3);
-    border-radius: 60px;
-    margin: 0 auto;
-    max-width: 400px;
-    padding: 5px;
+  padding: 75px 0 10px;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  /* ${props => props.fixed && css`
+    height: 70px;
+    background: white;
+    box-shadow: 0 0 5px rgba(0,0,0,0.4);
+    padding: 0;
+    width: 100%
     position: fixed;
-    right: 0;
+    right: 0; 
     top: -2px;
-    transform: scale(.5);
     z-index: 1;
-  `}
+    & li {
+      transform: scale(.85);
+      padding: 5px 5px;
+      & div {
+        margin-bottom: 1em;
+      }
+    }
+  `} */
 `
 export const Item = styled.li`
-  padding: 0 8px;
+  padding: 0 0 0 16px;
+  position: relative;
 `

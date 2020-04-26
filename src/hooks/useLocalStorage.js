@@ -12,7 +12,14 @@ export function useLocalStorage (key, initialValue) {
 
   const setLocalStorage = value => {
     try {
-      window.localStorage.setItem(key, JSON.stringify(value))
+      const itemValue = () => {
+        if (typeof value === 'string') {
+          return value
+        }
+        return JSON.stringify(value)
+      }
+
+      window.localStorage.setItem(key, itemValue())
       setValue(value)
     } catch (e) {
       console.error(e)

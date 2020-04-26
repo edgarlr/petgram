@@ -17,6 +17,7 @@ const Provider = ({ children }) => {
       window.sessionStorage.removeItem('token')
     }
   }
+
   return (
     <Context.Provider value={value} >
       {children}

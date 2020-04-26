@@ -1,14 +1,12 @@
 import styled from 'styled-components'
 import { Link as LinkRouter } from '@reach/router'
+import { SkeletonColor } from '../../styles/Theme'
 
 export const Link = styled(LinkRouter)`
-  border-radius: 8px;
-  box-shadow: 0 0 8px rgba(0, 0, 0, .3);
-  display: inline-block;
-  margin: 1%;
+  width: 100%;
   overflow: hidden;
-  width: 31.33%;  
   position: relative;
+  background-color: ${SkeletonColor};
   &:after{
     content: '';
     display: block;
@@ -16,7 +14,10 @@ export const Link = styled(LinkRouter)`
   }
 `
 export const Grid = styled.div`
-  padding-top: 32px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 4px;
+  padding-top: 10px;
 `
 
 export const Image = styled.img`

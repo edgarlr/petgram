@@ -1,8 +1,9 @@
 import styled from 'styled-components'
+import { TextColor } from '../../styles/Theme'
 
 export const Svg = styled.svg`
-  width: 220px;
-  transform: translateX(25%) ;
-  margin: -20px auto -30px;
-
+  display: block;
+  margin: 0 auto;
+  width: ${props => props.size};
+  fill: ${TextColor}
 `

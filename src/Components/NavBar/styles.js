@@ -1,11 +1,10 @@
 import styled from 'styled-components'
 import { Link as LinkRouter } from '@reach/router'
-import { fadeIn } from '../../styles/animation'
+import { AccentColor, backgroundColor, TextColor } from '../../styles/Theme'
 
 export const Nav = styled.nav`
   align-items: center;
-  background: #fcfcfc;
-  border-top: 1px solid #e0e0e0;
+  background: ${backgroundColor};
   bottom: 0;
   display: flex;
   height: 50px;
@@ -20,24 +19,33 @@ export const Nav = styled.nav`
 `
 export const Link = styled(LinkRouter)`
   align-items: center;
-  color: #888;
+  color: ${TextColor};
+  opacity: .4;
   display: inline-flex;
   height: 100%;
   justify-content: center;
   text-decoration: none;
   width: 100%;
   &[aria-current] {
-    color: black;
-    /* border-bottom: 3px solid #ff6666; */
-
+    margin-top: -3px;
+    opacity: 1;
+    color: ${AccentColor};
+    & svg{
+      display: none;
+    }
+    &:before{
+      content: '${props => props.name}';
+      font-size: .83em;
+      font-weight: bold;
+    }
     &:after {
-      ${fadeIn({ time: '0.5s' })};
-      content: '.';
+      content: '';
       position: absolute;
-      bottom: 0;
-      font-size: 34px;
-      line-height: 35px;
-      color: #ff6666;
+      bottom: 12px;
+      width: 5px;
+      height: 5px;
+      background: ${AccentColor};
+      border-radius: 50%;
     }
   }
   `

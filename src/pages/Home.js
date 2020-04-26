@@ -1,17 +1,23 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { ListOfCategories } from '../Components/ListOfCategories'
 import { ListOfPhotoCards } from '../Containers/ListOfPhotoCards'
-import { Layout } from '../Components/Layout'
+import { Helmet } from 'react-helmet'
+import { Logo } from '../Components/Logo'
+import { Header } from '../Components/Header'
 
 const HomePage = ({ categoryId }) => {
   return (
-    <Layout
-      title='Tu app de fotos de mascotas'
-      subtitle='Con petgram puedes encontrar fotos de animales domésticos muy bonitos'
-    >
+    <Fragment>
+      <Header>
+        <Logo size='180px' />
+      </Header>
+      <Helmet>
+        <title>Petgram | Tu app de mascotas</title>
+        <meta name='description' content='Con petgram puedes encontrar fotos de animales domésticos muy bonitos' />
+      </Helmet>
       <ListOfCategories />
       <ListOfPhotoCards categoryId={categoryId} />
-    </Layout>
+    </Fragment>
   )
 }
 

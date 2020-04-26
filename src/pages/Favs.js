@@ -4,7 +4,7 @@ import { Layout } from '../Components/Layout'
 
 export default () => (
   <Layout
-    title='Tus favoritos'
+    title='Favoritos'
     subtitle='Aquí puedes encontrar tus favoritos'
   >
     <FavsWithQuery />

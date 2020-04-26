@@ -1,7 +1,8 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import { useInputValue } from '../../hooks/useInputValue'
-import { Form, Input, Title, Error } from './styles'
+import { Form, Input, Title, Error, Label, Div } from './styles'
 import { SubmitButton } from '../SubmitButton'
+import { Logo } from '../../Components/Logo'
 
 export const UserForm = ({ disabled, error, onSubmit, title }) => {
   const email = useInputValue('')
@@ -12,11 +13,15 @@ export const UserForm = ({ disabled, error, onSubmit, title }) => {
   }
 
   return (
-    <Fragment>
+    <Div>
+      <Logo size='250px' margin='5vh auto -80px' />
       <Form onSubmit={handleSubmit}>
         <Title>{title}</Title>
-        <Input disabled={disabled} placeholder='Email' {...email} />
+        <Label htmlFor='email'>Email</Label>
+        <Input name='email' disabled={disabled} placeholder='Email' {...email} />
+        <Label htmlFor='password'>Contraseña</Label>
         <Input
+          name='password'
           placeholder='Password'
           type='password'
           disabled={disabled}
@@ -25,6 +30,6 @@ export const UserForm = ({ disabled, error, onSubmit, title }) => {
         <SubmitButton disabled={disabled}>{title}</SubmitButton>
       </Form>
       {error && <Error>{error}</Error>}
-    </Fragment>
+    </Div>
   )
 }
