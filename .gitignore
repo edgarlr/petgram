@@ -91,3 +91,7 @@ $RECYCLE.BIN/
 dist/
 ./package-lock.json
 .now
+
+# Cypress
+cypress/screenshots/*
+cypress/videos/*

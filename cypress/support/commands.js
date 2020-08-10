@@ -23,3 +23,21 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
+
+/* global Cypress, cy  */
+
+Cypress.Commands.add('registerUser', (userData) => {
+  cy.visit('/signup')
+  cy.get('[name="email"]').type(userData.email)
+  cy.get('[name="password"]').type(userData.password)
+  cy.contains('.sc-VigVT', 'Registrarse').click()
+  cy.wait(3000)
+  cy.get('.sc-hMqMXs').should('not.exist')
+})
+
+Cypress.Commands.add('loginUser', (username, password) => {
+  cy.get('[name="email"]').type(username)
+  cy.get('[name="password"]').type(password)
+  cy.get('.sc-VigVT').click()
+  cy.wait(2000)
+})
