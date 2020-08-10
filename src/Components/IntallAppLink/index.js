@@ -21,9 +21,9 @@ export const InstallAppLink = () => {
     if (!promptInstall) return null
     promptInstall.prompt()
   }
-  // if (!supportPWA) {
-  //   return null
-  // }
+  if (!supportPWA) {
+    return null
+  }
 
   const [show, setShow] = useState(true)
 
