@@ -1,7 +1,7 @@
 {
-  "name": "react-avanzado",
+  "name": "social-network-app",
   "version": "1.0.0",
-  "description": "Repositorio con el código del [Curso Avanzado de React de Platzi](https://platzi.com/cursos/react-avanzado/)",
+  "description": "Social network app with react",
   "main": "index.js",
   "scripts": {
     "now-build": "npm run build",
@@ -14,14 +14,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/midudev/curso-platzi-react-avanzado.git"
+    "url": "git+https://github.com/edgarlr/social-network-app.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/midudev/curso-platzi-react-avanzado/issues"
+    "url": "https://github.com/edgarlr/social-network-app.git/issues"
   },
-  "homepage": "https://github.com/midudev/curso-platzi-react-avanzado#readme",
+  "homepage": "https://github.com/edgarlr/social-network-app.git#readme",
   "keywords": [],
   "devDependencies": {
     "@babel/core": "7.4.5",
