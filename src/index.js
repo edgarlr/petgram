@@ -5,10 +5,9 @@ import { ApolloProvider } from "react-apollo";
 import { App } from "./App";
 import Context from "./Context";
 import { MyThemeProvider } from "./ThemeContext";
-import { API_URL } from "./lib/constants";
 
 const client = new ApolloClient({
-  uri: `${API_URL}/graphql`,
+  uri: "https://edgarlr-petgram-api.vercel.app/graphql",
   request: (operation) => {
     const token = window.sessionStorage.getItem("token");
     const authorization = token ? `Bearer ${token}` : "";

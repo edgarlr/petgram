@@ -1,5 +1,4 @@
 import React, { useState, useEffect, Fragment } from "react";
-import { API_URL } from "../../lib/constants";
 import { Category } from "../Category";
 import { List, Item } from "./styles";
 
@@ -11,7 +10,9 @@ function useCategoriesData() {
     const fetchData = async () => {
       setLoading(true);
       try {
-        let response = await window.fetch(`${API_URL}/categories`);
+        let response = await window.fetch(
+          "https://edgarlr-petgram-api.vercel.app/categories"
+        );
         let res = await response.json();
         setCategories(res);
         setLoading(false);

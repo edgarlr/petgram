@@ -2,7 +2,6 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const WebpackPwaManifestPlugin = require("webpack-pwa-manifest");
 const WorkboxWebpackPlugin = require("workbox-webpack-plugin");
 const path = require("path");
-const { API_URL } = require("./src/lib/constants");
 
 module.exports = {
   output: {
@@ -63,7 +62,9 @@ module.exports = {
           },
         },
         {
-          urlPattern: new RegExp(`${API_URL}/graphql`),
+          urlPattern: new RegExp(
+            "https://edgarlr-petgram-api.vercel.app/graphql"
+          ),
           handler: "NetworkFirst",
           options: {
             cacheName: "api",
