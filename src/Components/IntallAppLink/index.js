@@ -5,6 +5,7 @@ import { Div, Button, Close } from './styles'
 export const InstallAppLink = () => {
   const [supportPWA, setSupportPWA] = useState(false)
   const [promptInstall, setPromptInstall] = useState(null)
+  const [show, setShow] = useState(true)
 
   useEffect(() => {
     const handler = e => {
@@ -24,8 +25,6 @@ export const InstallAppLink = () => {
   if (!supportPWA) {
     return null
   }
-
-  const [show, setShow] = useState(true)
 
   const onCloseClick = () => {
     setShow(false)

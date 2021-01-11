@@ -10,7 +10,6 @@
     "dev": "webpack-dev-server --history-api-fallback",
     "lint": "standard",
     "test": "cypress open"
-    
   },
   "repository": {
     "type": "git",
